@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="LtxXl_OnLoad">
+  <ribbon>
+    <tabs>
+      <tab id="xlTab" label="Lattice" keytip="K" insertAfterMso="TabHome">
+
+        <group id="xlGrpWorkbook" label="Workbook">
+          <button id="xlBackup" label="Save + Backup" image="backup" size="large" keytip="B" onAction="LtxXl_OnAction" screentip="Save and keep a timestamped copy in \Backups (Ctrl+Shift+S)"/>
+          <button id="xlOptimize" label="Optimize" image="optimize" size="large" keytip="O" onAction="LtxXl_OnAction" screentip="Shrink the file: reset used ranges, drop broken names and unused styles"/>
+          <menu id="xlShareMenu" label="Share" image="share" size="large" keytip="H">
+            <button id="xlHardcodeSheet" label="Convert sheet formulas to values" imageMso="PasteValues" onAction="LtxXl_OnAction"/>
+            <button id="xlHardcodeBook" label="Convert workbook formulas to values" imageMso="PasteValues" onAction="LtxXl_OnAction"/>
+            <button id="xlExportPng" label="Export selection as PNG" imageMso="PictureInsertFromFile" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepSh1"/>
+            <button id="xlHealth" label="Health report (volatiles, errors, links, size)" imageMso="ReviewAcceptChange" onAction="LtxXl_OnAction"/>
+            <button id="xlHealthRemove" label="Remove Lattice report sheets" imageMso="Delete" onAction="LtxXl_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="xlGrpColor" label="Color">
+          <splitButton id="xlAutoColorSplit" size="large">
+            <button id="xlAutoColor" label="AutoColor" image="autocolor" keytip="A" onAction="LtxXl_OnAction" screentip="Blue inputs, black formulas, green sheet links, purple external links, dark red formulas with embedded numbers (Ctrl+Shift+A)"/>
+            <menu id="xlAutoColorMenu">
+              <button id="xlAutoColorSheet" label="AutoColor whole sheet" onAction="LtxXl_OnAction"/>
+              <button id="xlAutoColorBook" label="AutoColor whole workbook" onAction="LtxXl_OnAction"/>
+              <button id="xlStyleFile" label="Edit colour and cycle settings..." imageMso="PropertySheet" onAction="LtxXl_OnAction"/>
+            </menu>
+          </splitButton>
+          <button id="xlFontCycle" label="Font" imageMso="TextFillColorPicker" size="normal" onAction="LtxXl_OnAction" screentip="Cycle font colour (Ctrl+Shift+F)"/>
+          <button id="xlFillCycle" label="Fill" imageMso="FillColorPicker" size="normal" onAction="LtxXl_OnAction" screentip="Cycle fill colour (Ctrl+Shift+H)"/>
+          <button id="xlBorderCycle" label="Border" imageMso="BordersGallery" size="normal" onAction="LtxXl_OnAction" screentip="Cycle borders (Ctrl+Shift+B)"/>
+          <splitButton id="xlBlackSplit" size="large">
+            <toggleButton id="xlBlackToggle" label="Black Fonts" image="blackfonts" keytip="Z" getPressed="LtxXl_GetPressed" onAction="LtxXl_OnToggle" screentip="Presentation mode: turn blue / green / red fonts on this sheet black; click again to restore the colours (Ctrl+Shift+Z)"/>
+            <menu id="xlBlackMenu">
+              <button id="xlBlackBook" label="Toggle whole workbook" onAction="LtxXl_OnAction"/>
+              <button id="xlBlackSel" label="Toggle selection only" onAction="LtxXl_OnAction"/>
+            </menu>
+          </splitButton>
+        </group>
+
+        <group id="xlGrpModel" label="Model">
+          <menu id="xlFormat" label="Format" image="format" size="large" keytip="F" itemSize="normal">
+            <menu id="xlFmtColor" label="Color" imageMso="FontColorPicker">
+              <button id="xlFmtFont" label="Font colour cycle" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtFill" label="Fill colour cycle" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtAuto" label="AutoColor selection" onAction="LtxXl_OnAction"/>
+            </menu>
+            <menu id="xlFmtNumber" label="Number" imageMso="NumberFormatGallery">
+              <button id="xlFmtNum" label="Number cycle  (Ctrl+Shift+1)" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtPct" label="Percent cycle  (Ctrl+Shift+5)" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtMult" label="Multiple cycle  (Ctrl+Shift+6)" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtDate" label="Date cycle  (Ctrl+Shift+3)" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtCur" label="Currency cycle  (Ctrl+Shift+4)" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtNeg" label="Negatives: parentheses / red cycle" onAction="LtxXl_OnAction"/>
+            </menu>
+            <menu id="xlFmtBorder" label="Border" imageMso="BordersGallery">
+              <button id="xlFmtBorderCycle" label="Border cycle" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtBottom" label="Bottom border cycle" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtTop" label="Top border toggle" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtOutline" label="Outline" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtNoBorder" label="Remove borders" onAction="LtxXl_OnAction"/>
+            </menu>
+            <menu id="xlFmtAlign" label="Alignment" imageMso="AlignCenter">
+              <button id="xlFmtCenterH" label="Centering cycle (centre / across selection / general)" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtAlignCycle" label="Horizontal alignment cycle" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtVAlign" label="Vertical alignment cycle" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtIndentMore" label="Left indent cycle (more)" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtIndentLess" label="Right indent cycle (less)" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtWrap" label="Toggle wrap" onAction="LtxXl_OnAction"/>
+            </menu>
+            <menu id="xlFmtFontMenu" label="Font" imageMso="FontDialog">
+              <button id="xlFmtGrow" label="Font size +1" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtShrink" label="Font size -1" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtUnderline" label="Underline cycle (none / single / double accounting)" onAction="LtxXl_OnAction"/>
+            </menu>
+            <menu id="xlFmtCase" label="Case" imageMso="ChangeCaseGallery">
+              <button id="xlFmtUpper" label="UPPER" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtLower" label="lower" onAction="LtxXl_OnAction"/>
+              <button id="xlFmtProper" label="Proper Case" onAction="LtxXl_OnAction"/>
+            </menu>
+            <menu id="xlFmtStyles" label="Row styles" imageMso="TableStyleGallery">
+              <button id="xlHeader" label="Header row" onAction="LtxXl_OnAction"/>
+              <button id="xlTotal" label="Total row" onAction="LtxXl_OnAction"/>
+              <button id="xlSumRow" label="Insert sum row below" onAction="LtxXl_OnAction"/>
+            </menu>
+            <menuSeparator id="xlSepFmt1"/>
+            <button id="xlCopyFmt" label="Copy format (sticky)" imageMso="FormatPainter" onAction="LtxXl_OnAction"/>
+            <button id="xlPasteFmt" label="Paste format" imageMso="PasteFormatting" onAction="LtxXl_OnAction"/>
+          </menu>
+          <menu id="xlFormulas" label="Formulas" image="formulas" size="large" keytip="U">
+            <button id="xlAnchors" label="$ Anchor cycle  (Ctrl+Shift+Q)" imageMso="FormulaEvaluate" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepCase"/>
+            <button id="xlCaseSwitch" label="Insert case drop-down (Base / Upside / Downside)" imageMso="ControlsGallery" onAction="LtxXl_OnAction" screentip="A bare Forms drop-down at the active cell. Right-click > Format Control to set the Input range (case names) and the Cell link (selected number, 1 = first). Select the cells with the case names first to pre-fill the input range. Copy it to any tab."/>
+            <button id="xlFlip" label="Flip sign  (Ctrl+Shift+N)" onAction="LtxXl_OnAction"/>
+            <button id="xlValues" label="Convert to values  (Ctrl+Shift+V)" imageMso="PasteValues" onAction="LtxXl_OnAction"/>
+            <button id="xlIfError" label="Wrap in IFERROR  (Ctrl+Shift+E)" onAction="LtxXl_OnAction"/>
+            <button id="xlSimplify" label="Simplify to value (keeps a note)" onAction="LtxXl_OnAction"/>
+            <button id="xlCheck" label="Insert zero check" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepFo1"/>
+            <button id="xlFillRight" label="Fast fill right  (Ctrl+Shift+R)" imageMso="FillRight" onAction="LtxXl_OnAction"/>
+            <button id="xlFillDown" label="Fast fill down  (Ctrl+Shift+D)" imageMso="FillDown" onAction="LtxXl_OnAction"/>
+            <button id="xlCopyExact" label="Copy exact formulas" onAction="LtxXl_OnAction"/>
+            <button id="xlPasteExact" label="Paste exact formulas" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepFo2"/>
+            <button id="xlName" label="Name range..." onAction="LtxXl_OnAction"/>
+            <button id="xlTag" label="Tag cell with dated note..." onAction="LtxXl_OnAction"/>
+          </menu>
+          <menu id="xlChartsMenu" label="Charts" image="charts" size="large" keytip="C">
+            <button id="xlFootball" label="Football field (label | low | high)" imageMso="ChartTypeBarInsertGallery" onAction="LtxXl_OnAction"/>
+            <button id="xlFFLine" label="Football field: add reference line" onAction="LtxXl_OnAction"/>
+            <button id="xlStacked" label="Stacked column with totals" imageMso="ChartTypeColumnInsertGallery" onAction="LtxXl_OnAction"/>
+            <button id="xlWaterfall" label="Waterfall / bridge" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepCh1"/>
+            <button id="xlChartCol" label="Quick column chart" onAction="LtxXl_OnAction"/>
+            <button id="xlChartLine" label="Quick line chart" onAction="LtxXl_OnAction"/>
+            <button id="xlChartBar" label="Quick bar chart" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepCh2"/>
+            <button id="xlCAGR" label="Insert CAGR  (Ctrl+Shift+M)" imageMso="ChartTrendline" onAction="LtxXl_OnAction"/>
+            <button id="xlGrowthRow" label="Insert % growth rows" onAction="LtxXl_OnAction"/>
+            <button id="xlMarginRow" label="Insert % margin row..." onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepCh3"/>
+            <button id="xlChartTotals" label="Chart: total labels above the stacks" imageMso="ChartDataLabel" onAction="LtxXl_OnAction" screentip="Adds a live total series (no line) with bold labels above each stacked column of the selected chart"/>
+            <button id="xlChartCAGR" label="Chart: CAGR arrow (first to last category)" imageMso="ChartTrendline" onAction="LtxXl_OnAction" screentip="Arrow across the top of the selected chart with the CAGR of the category totals; re-run to recompute"/>
+            <button id="xlChartDelta" label="Chart: difference arrow between two categories..." imageMso="ShapeUpArrow" onAction="LtxXl_OnAction" screentip="Vertical arrow with the % change between two categories (dotted level line from the first)"/>
+            <button id="xlChartNotesRemove" label="Chart: remove Lattice annotations" onAction="LtxXl_OnAction"/>
+          </menu>
+          <menu id="xlLibrary" label="Library" image="library" size="large" keytip="L" screentip="Pre-built analyses written as live formulas at the active cell">
+            <button id="xlLibLBO" label="LBO quick model" onAction="LtxXl_OnAction"/>
+            <button id="xlLibDCF" label="DCF (5-year, EV bridge)" onAction="LtxXl_OnAction"/>
+            <button id="xlLibDist" label="Distribution waterfall (pref, catch-up, carry)" onAction="LtxXl_OnAction"/>
+            <button id="xlLibAccDil" label="Accretion / dilution" onAction="LtxXl_OnAction"/>
+            <button id="xlLibReturns" label="Returns (IRR / MOIC)" onAction="LtxXl_OnAction"/>
+            <button id="xlLibDebt" label="Debt schedule" onAction="LtxXl_OnAction"/>
+            <button id="xlLibCredit" label="Credit statistics" onAction="LtxXl_OnAction"/>
+            <button id="xlLibBS" label="Black-Scholes" onAction="LtxXl_OnAction"/>
+            <button id="xlLibSens" label="Sensitivity table (2-way)..." onAction="LtxXl_OnAction"/>
+            <button id="xlLibScenario" label="Scenario switch block..." onAction="LtxXl_OnAction"/>
+            <button id="xlLibTimeline" label="Timeline header..." onAction="LtxXl_OnAction"/>
+            <button id="xlRunCases" label="Run cases: scenario table of chosen outputs..." imageMso="TableInsertGallery" onAction="LtxXl_OnAction" screentip="Writes 1..n into the case cell, recalculates, and tabulates the output cells you pick: one row per output, one column per case, plus change vs the first case. The case cell is restored afterwards."/>
+            <menuSeparator id="xlSepL1"/>
+            <button id="xlLibInsert" label="Insert from my library..." imageMso="PasteGallery" onAction="LtxXl_OnAction"/>
+            <button id="xlLibSave" label="Save selection to my library..." imageMso="SaveSelectionToQuickPartGallery" onAction="LtxXl_OnAction"/>
+            <button id="xlLibOpen" label="Open library workbook" imageMso="FileOpen" onAction="LtxXl_OnAction"/>
+          </menu>
+          <menu id="xlCellsMenu" label="Cells" imageMso="CellsMenu" size="normal">
+            <button id="xlCleanNumbers" label="Text to numbers" onAction="LtxXl_OnAction"/>
+            <button id="xlTrimText" label="Trim and clean text" onAction="LtxXl_OnAction"/>
+            <button id="xlUnmergeFill" label="Unmerge and fill" onAction="LtxXl_OnAction"/>
+            <button id="xlBlankRows" label="Remove blank rows" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepCe1"/>
+            <button id="xlToThousands" label="Divide by 1,000 (keeps formulas)" onAction="LtxXl_OnAction"/>
+            <button id="xlToMillions" label="Divide by 1,000,000" onAction="LtxXl_OnAction"/>
+            <button id="xlFromThousands" label="Multiply by 1,000" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepCe2"/>
+            <button id="xlTransposeVals" label="Paste transposed values..." onAction="LtxXl_OnAction"/>
+            <button id="xlSelStats" label="Selection statistics" onAction="LtxXl_OnAction"/>
+          </menu>
+          <menu id="xlSheetsMenu" label="Sheets" imageMso="SheetInsert" size="normal">
+            <button id="xlUnhide" label="Unhide all sheets" onAction="LtxXl_OnAction"/>
+            <button id="xlHideInactive" label="Hide all but the active sheet" onAction="LtxXl_OnAction"/>
+            <button id="xlCompare" label="Compare with sheet..." onAction="LtxXl_OnAction"/>
+          </menu>
+          <menu id="xlViewMenu" label="View" imageMso="ViewNormalViewExcel" size="normal">
+            <button id="xlGridlines" label="Toggle gridlines  (Ctrl+Shift+G)" onAction="LtxXl_OnAction"/>
+            <button id="xlHeadings" label="Toggle row / column headings" onAction="LtxXl_OnAction"/>
+            <button id="xlFreeze" label="Toggle freeze panes" onAction="LtxXl_OnAction"/>
+            <button id="xlShowFormulas" label="Toggle show formulas" onAction="LtxXl_OnAction"/>
+            <button id="xlZoom" label="Cycle zoom 100 / 85 / 70" onAction="LtxXl_OnAction"/>
+            <button id="xlColWidth" label="Column width..." onAction="LtxXl_OnAction"/>
+            <button id="xlAutofit" label="Autofit columns" onAction="LtxXl_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="xlGrpAudit" label="Audit">
+          <splitButton id="xlModelCheckSplit" size="large">
+            <button id="xlModelCheck" label="Model Check" image="modelcheck" keytip="M" onAction="LtxXl_OnAction" screentip="Pane: hard-codes in formulas, errors, masked errors, text numbers, inconsistent formulas, unused inputs"/>
+            <menu id="xlModelCheckMenu">
+              <button id="xlAuditSheet" label="Audit report sheet (active sheet)" onAction="LtxXl_OnAction"/>
+              <button id="xlAuditBook" label="Audit report sheet (workbook)" onAction="LtxXl_OnAction"/>
+              <button id="xlHcWhitelist" label="Hard-code whitelist..." onAction="LtxXl_OnAction"/>
+            </menu>
+          </splitButton>
+          <splitButton id="xlTraceSplit" size="large">
+            <button id="xlTraceInBig" label="Trace In" image="tracein" keytip="P" onAction="LtxXl_OnAction" screentip="Floating window: follow a formula back through its inputs (Ctrl+Shift+[)"/>
+            <menu id="xlTrace">
+            <button id="xlGoPrec" label="Go to precedent  (Ctrl+[)" imageMso="TracePrecedents" onAction="LtxXl_OnAction"/>
+            <button id="xlGoDep" label="Go to dependent  (Ctrl+])" imageMso="TraceDependents" onAction="LtxXl_OnAction"/>
+            <button id="xlGoBack" label="Back  (Ctrl+Shift+Enter)" imageMso="GoBack" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepT0"/>
+            <button id="xlTraceIn" label="Trace In window  (Ctrl+Shift+[)" imageMso="TracePrecedents" onAction="LtxXl_OnAction"/>
+            <button id="xlTraceOut" label="Trace Out window  (Ctrl+Shift+])" imageMso="TraceDependents" onAction="LtxXl_OnAction"/>
+            <button id="xlPrec" label="Precedents quick list" imageMso="TracePrecedents" onAction="LtxXl_OnAction"/>
+            <button id="xlDep" label="Dependents quick list" imageMso="TraceDependents" onAction="LtxXl_OnAction"/>
+            <button id="xlFlow" label="Formula flow  (Ctrl+Shift+L)" imageMso="FormulaEvaluate" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepT1"/>
+            <button id="xlArrows" label="Show arrows" onAction="LtxXl_OnAction"/>
+            <button id="xlClearArrows" label="Clear arrows" imageMso="RemoveAllArrows" onAction="LtxXl_OnAction"/>
+            </menu>
+          </splitButton>
+          <menu id="xlVisualize" label="Visualize" image="visualize" size="large" keytip="V">
+            <button id="xlHlHardcodes" label="Highlight formulas with hard-codes (toggle)  (Ctrl+Shift+K)" onAction="LtxXl_OnAction"/>
+            <button id="xlInconsistent" label="Highlight inconsistent formulas" onAction="LtxXl_OnAction"/>
+            <button id="xlErrors" label="Select error cells" onAction="LtxXl_OnAction"/>
+            <button id="xlHardcodes" label="Select hard-coded numbers" onAction="LtxXl_OnAction"/>
+            <button id="xlExtractHc" label="Move hard-code to an input cell..." onAction="LtxXl_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="xlGrpComps" label="Comps">
+          <button id="xlQuickStats" label="Stats Rows" image="stats" size="large" keytip="S" onAction="LtxXl_OnAction" screentip="Mean / median / high / low / quartiles under the block"/>
+          <button id="xlFormatComps" label="Format" imageMso="TableStyleGallery" size="normal" onAction="LtxXl_OnAction" screentip="Header, banding, x / % / number formats per column"/>
+          <button id="xlRankPct" label="Rank" imageMso="SortDescendingExcel" size="normal" onAction="LtxXl_OnAction"/>
+          <button id="xlOutliers" label="Outliers" imageMso="ConditionalFormattingColorScalesGallery" size="normal" onAction="LtxXl_OnAction"/>
+        </group>
+
+        <group id="xlGrpExport" label="Export">
+          <splitButton id="xlExportPptSplit" size="large">
+            <button id="xlSendPic" label="Export to PowerPoint" image="exportppt" keytip="E" onAction="LtxXl_OnAction" screentip="Picture with fonts forced black, onto the active slide; replaces the selected shape there using Match Size (Ctrl+Alt+R)"/>
+            <menu id="xlExportPptMenu">
+              <button id="xlSendPic2" label="As picture, fonts forced black  (Ctrl+Alt+R)" imageMso="PasteAsPicture" onAction="LtxXl_OnAction" screentip="Same as the big button: picture of the selection with blue, green and red fonts turned black; replaces the selected shape in PowerPoint when Match Size is on"/>
+              <button id="xlSendTable" label="As editable table  (Ctrl+Alt+T)" imageMso="TableInsertGallery" onAction="LtxXl_OnAction"/>
+              <button id="xlSendChart" label="Chart as vector picture  (Ctrl+Alt+C)" imageMso="ChartInsert" onAction="LtxXl_OnAction"/>
+              <button id="xlSendNativeChart" label="Chart as native PowerPoint chart" imageMso="ChartTypeColumnInsertGallery" onAction="LtxXl_OnAction"/>
+              <button id="xlSendEmbed" label="Range as embedded workbook" imageMso="ObjectInsert" onAction="LtxXl_OnAction"/>
+              <menuSeparator id="xlSepEx1"/>
+              <button id="xlCopyPic" label="Copy for PowerPoint / Word (paste there with Import)" imageMso="PasteAsPicture" onAction="LtxXl_OnAction"/>
+              <button id="xlCopyTable" label="Copy as table" onAction="LtxXl_OnAction"/>
+              <button id="xlCopyChart" label="Copy chart" onAction="LtxXl_OnAction"/>
+            </menu>
+          </splitButton>
+          <splitButton id="xlExportWordSplit" size="large">
+            <button id="xlSendWordPic" label="Export to Word" image="exportword" keytip="W" onAction="LtxXl_OnAction" screentip="Picture at the cursor in the running Word (Ctrl+Alt+W)"/>
+            <menu id="xlExportWordMenu">
+              <button id="xlSendWordPic2" label="As picture, fonts forced black  (Ctrl+Alt+W)" imageMso="PasteAsPicture" onAction="LtxXl_OnAction"/>
+              <button id="xlSendWordTable" label="As Word table" onAction="LtxXl_OnAction"/>
+            </menu>
+          </splitButton>
+          <toggleButton id="xlMatchWidth" label="Width" imageMso="SizeToControlWidth" size="normal" getPressed="LtxXl_GetPressed" onAction="LtxXl_OnToggle" screentip="Match the selected shape's width when exporting"/>
+          <toggleButton id="xlMatchHeight" label="Height" imageMso="SizeToControlHeight" size="normal" getPressed="LtxXl_GetPressed" onAction="LtxXl_OnToggle" screentip="Match height"/>
+          <toggleButton id="xlMatchSize" label="Size" imageMso="SizeToControl" size="normal" getPressed="LtxXl_GetPressed" onAction="LtxXl_OnToggle" screentip="Match width and height"/>
+          <menu id="xlRefreshMenu" label="Refresh" image="refresh" size="normal" keytip="R">
+            <button id="xlRefreshPpt" label="Refresh PowerPoint deck  (Ctrl+Shift+U)" onAction="LtxXl_OnAction"/>
+            <button id="xlRefreshWord" label="Refresh Word document" onAction="LtxXl_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="xlGrpLattice" label="Lattice">
+          <button id="xlShortcutCard" label="Shortcuts" image="shortcuts" size="large" keytip="K" onAction="LtxXl_OnAction" screentip="Open the shortcut card"/>
+          <menu id="xlSettings" label="Settings" image="settings" size="large" keytip="G">
+            <button id="xlSettingsDlg" label="Settings dialog..." imageMso="PropertySheet" onAction="LtxXl_OnAction" screentip="Every Lattice setting in one window"/>
+            <menuSeparator id="xlSepSet0"/>
+            <button id="xlKeysEdit" label="Edit shortcuts file..." onAction="LtxXl_OnAction"/>
+            <button id="xlKeysReload" label="Reload shortcuts" onAction="LtxXl_OnAction"/>
+            <button id="xlKeysReset" label="Reset shortcuts to defaults" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepS1"/>
+            <button id="xlStyleFile2" label="Edit style guide (cycles, colours, palette)..." onAction="LtxXl_OnAction"/>
+            <button id="xlLibPath" label="Library location..." onAction="LtxXl_OnAction"/>
+            <button id="xlAutoNameToggle" label="Toggle auto-naming of exported ranges" onAction="LtxXl_OnAction"/>
+            <button id="xlExportActivateToggle" label="Toggle switching to PowerPoint after export" onAction="LtxXl_OnAction"/>
+            <menuSeparator id="xlSepS2"/>
+            <button id="xlAbout" getLabel="LtxXl_GetLabel" onAction="LtxXl_OnAction"/>
+          </menu>
+        </group>
+
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>

@@ -1,0 +1,7 @@
+# build and test leftovers
+*.log
+*.tmp
+tests/out/
+~$*
+.~lock*
+Thumbs.db

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="LtxRibbon_OnLoad">
+  <ribbon>
+    <tabs>
+      <tab id="ltxTab" label="Lattice" keytip="L" insertAfterMso="TabHome">
+
+        <group id="ltxGrpPres" label="Presentation">
+          <button id="ltxNew" label="New" image="new" size="large" keytip="N" onAction="LtxRibbon_OnAction" screentip="New deck from your template"/>
+          <menu id="ltxFileMenu" label="File" image="file" size="normal">
+            <button id="ltxBackup" label="Save Backup Copy" imageMso="FileSaveAs" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxPdf" label="Export PDF" imageMso="FileSaveAsPdfOrXps" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxPdfSel" label="Export PDF (selected slides)" imageMso="FileSaveAsPdfOrXps" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <menu id="ltxSendMenu" label="Send" image="send" size="normal">
+            <button id="ltxSend" label="Email deck" imageMso="FileSendAsAttachment" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSendPdf" label="Email as PDF" imageMso="FileSendAsPdfEmailAttachement" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <menu id="ltxSlidesMenu" label="Slides" image="slides" size="large">
+            <button id="ltxDupSlides" label="Duplicate selected" imageMso="SlideDuplicate" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxDelHidden" label="Delete hidden slides" imageMso="SlideHide" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxClearNotes" label="Clear speaker notes" imageMso="SlideNotesPage" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepSl1"/>
+            <button id="ltxNumbersOn" label="Slide numbers on" imageMso="NumberInsert" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxNumbersOff" label="Slide numbers off" imageMso="NumberInsert" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepSl2"/>
+            <button id="ltxRemoveStamps" label="Remove review stamps" imageMso="Delete" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <splitButton id="ltxAgendaSplit" size="large">
+            <button id="ltxAgenda" label="Agenda" image="agenda" keytip="G" onAction="LtxRibbon_OnAction" screentip="Build agenda + section divider slides from the deck's sections (re-run to sync)"/>
+            <menu id="ltxAgendaMenu">
+              <button id="ltxSyncSections" label="Sync section names into first-slide titles" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxSectionFromTitle" label="Rename section from this slide's title" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxToc" label="Table of contents slide" onAction="LtxRibbon_OnAction"/>
+            </menu>
+          </splitButton>
+          <menu id="ltxPagesMenu" label="Pagination" image="pagination" size="large" keytip="P">
+            <button id="ltxPageNums" label="Page numbers (format, start number)..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxPageNumsOff" label="Remove page numbers" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxPageSkip" label="Skip / include this slide in numbering" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxFirstNumber" label="Native first slide number..." onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepP1"/>
+            <button id="ltxBlankEvery" label="Blank page after every slide (facing pages)" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxBlankSections" label="Blank page at the end of each section" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxBlankOdd" label="Pad so sections start on odd pages" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxBlankRemove" label="Remove blank pages" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <button id="ltxDeckCheck" label="Deck Check" image="deckcheck" size="large" keytip="K" onAction="LtxRibbon_OnAction" screentip="Find empty placeholders, off-slide shapes, TBDs, stale links, font mix"/>
+          <menu id="ltxDeckTools" label="Deck Tools" image="decktools" size="large" keytip="D">
+            <button id="ltxHarmonizeFonts" label="Harmonize fonts (family, minimum size)..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxReplaceFont" label="Replace font family..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxFontReport" label="Font report" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxFontCheck" label="Font consistency check (titles, subtitles, body)" imageMso="ReviewAcceptChange" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxConformTitles" label="Conform all titles to the selected / first title" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxConformSubs" label="Conform all subtitles to the selected / first subtitle" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxConformBody" label="Conform all body placeholders" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxConformLike" label="Conform text boxes in the same slot as the selected one" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxAlignTitles" label="Align all titles to first slide (position only)" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepDT1"/>
+            <button id="ltxTblNumbers" label="Table: number formats (1,000.0 / (neg) / % / x)..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTblHeader" label="Table: house header style" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTblDistribute" label="Table: equalise columns and rows" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTblFontSize" label="Table: font size..." onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepDT2"/>
+            <button id="ltxChartPalette" label="Charts: apply house palette to all" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSetChartPalette" label="Charts: set palette..." onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepDT3"/>
+            <button id="ltxCollectNotes" label="Collect sticky notes and comments into a review slide" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxDeleteComments" label="Delete all comments" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSectionsPdf" label="Export one PDF per section" onAction="LtxRibbon_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="ltxGrpInsert" label="Insert">
+          <menu id="ltxLibMenu" keytip="B" label="Library" image="library" size="large">
+            <button id="ltxLibInsert" label="Insert slide from library" imageMso="SlideInsertFromFile" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxLibSave" label="Save selected slides to library" imageMso="SlideLibraryPublish" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepLib1"/>
+            <button id="ltxSlideLinksRefresh" label="Refresh slide links (re-pull from library)" imageMso="Refresh" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSlideLinkUpdate" label="Push this slide back to the library" imageMso="SlideLibraryPublish" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <menu id="ltxStickerMenu" keytip="J" label="Stickers" image="stickers" size="large" screentip="Status marks: traffic lights, tick / cross, Harvey-ball cycling and DRAFT-style stamps (one per slide, replaced on re-run)">
+            <button id="ltxStGreen" label="Traffic light: green" imageMso="ShapeOval" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStAmber" label="Traffic light: amber" imageMso="ShapeOval" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStRed" label="Traffic light: red" imageMso="ShapeOval" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStLights" label="Traffic lights: all three" imageMso="ShapeOval" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepSt1"/>
+            <button id="ltxStTick" label="Tick" imageMso="AcceptTask" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStCross" label="Cross" imageMso="DeclineTask" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStHarvey" label="Harvey ball: next quarter (select one first)" imageMso="ShapeOval" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepSt2"/>
+            <button id="ltxStDraft" label="Stamp: DRAFT" imageMso="ReviewTrackChanges" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStConf" label="Stamp: CONFIDENTIAL" imageMso="ReviewTrackChanges" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStPrelim" label="Stamp: PRELIMINARY" imageMso="ReviewTrackChanges" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStDisc" label="Stamp: FOR DISCUSSION" imageMso="ReviewTrackChanges" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStIllus" label="Stamp: ILLUSTRATIVE" imageMso="ReviewTrackChanges" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStDraftAll" label="Stamp DRAFT on every slide" imageMso="ReviewTrackChanges" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStRemove" label="Remove all stamps" imageMso="ReviewDeleteComment" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <menu id="ltxTurboMenu" keytip="U" label="Turbo Shapes" image="turbo" size="large">
+            <menu id="ltxTurboHarvey" label="Harvey balls">
+              <button id="ltxTurboHarvey0" label="Empty (0%)" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxTurboHarvey25" label="Quarter (25%)" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxTurboHarvey50" label="Half (50%)" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxTurboHarvey75" label="Three quarters (75%)" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxTurboHarvey100" label="Full (100%)" onAction="LtxRibbon_OnAction"/>
+            </menu>
+            <button id="ltxTurboChevron" label="Chevron" imageMso="ShapeChevron" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboChevrons" label="Chevron process (4)" imageMso="ShapeChevron" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboTimeline" label="Timeline" imageMso="ShapeLine" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboNumbered" label="Numbered circle" imageMso="ShapeOval" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepT1"/>
+            <button id="ltxTurboSticky" label="Sticky note" imageMso="ReviewNewComment" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboCallout" label="Callout" imageMso="ShapeRectangularCallout" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboRounded" label="Rounded rectangle" imageMso="ShapeRoundedRectangle" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboOval" label="Oval" imageMso="ShapeOval" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboArrowr" label="Arrow right" imageMso="ShapeRightArrow" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboArrowd" label="Arrow down" imageMso="ShapeDownArrow" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboBracketr" label="Right bracket" imageMso="ShapeRightBracket" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboBracel" label="Left brace" imageMso="ShapeLeftBrace" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboLine" label="Line" imageMso="ShapeLine" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboDashed" label="Dashed line" imageMso="ShapeLine" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepT2"/>
+            <button id="ltxTurboCheck" label="Check mark" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboCross" label="Cross mark" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboSource" label="Source note" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboTablehdr" label="Blank 4x4 table" imageMso="TableInsertGallery" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepT3"/>
+            <button id="ltxTurboStampdraft" label="Stamp: DRAFT" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboStampconf" label="Stamp: CONFIDENTIAL" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTurboStampprelim" label="Stamp: PRELIMINARY" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <menu id="ltxMasterMenu" keytip="M" label="Master Shapes" image="master" size="large">
+            <button id="ltxMasterInsert" label="Insert master shape" imageMso="PasteGallery" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxMasterSave" label="Save selection as master shape" imageMso="SaveSelectionToQuickPartGallery" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxMasterManage" label="Open master shapes file" imageMso="FileOpen" onAction="LtxRibbon_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="ltxGrpColor" label="Color">
+          <button id="ltxFontCycle" label="Font" imageMso="FontColorPicker" size="normal" onAction="LtxRibbon_OnAction" screentip="Cycle font colour (black, grey, white, blue, green, red)"/>
+          <button id="ltxFillCycle" label="Fill" imageMso="ShapeFillColorPicker" size="normal" onAction="LtxRibbon_OnAction" screentip="Cycle fill colour"/>
+          <button id="ltxLineCycle" label="Line" imageMso="ShapeOutlineColorPicker" size="normal" onAction="LtxRibbon_OnAction" screentip="Cycle line weight (none, hairline, 1.5, 2.25)"/>
+          <menu id="ltxColorTools" keytip="C" label="Color Tools" image="colortools" size="large">
+            <button id="ltxHexFill" label="Fill from hex code" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxHexLine" label="Line from hex code" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxHexFont" label="Font from hex code" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepC1"/>
+            <menu id="ltxThemeFillMenu" label="Fill with theme colour">
+              <button id="ltxThemeFill13" label="Text 1" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFill14" label="Background 1" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFill5" label="Accent 1" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFill6" label="Accent 2" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFill7" label="Accent 3" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFill8" label="Accent 4" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFill9" label="Accent 5" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFill10" label="Accent 6" onAction="LtxRibbon_OnAction"/>
+            </menu>
+            <menu id="ltxThemeFontMenu" label="Font with theme colour">
+              <button id="ltxThemeFont13" label="Text 1" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFont14" label="Background 1" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFont5" label="Accent 1" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFont6" label="Accent 2" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFont7" label="Accent 3" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxThemeFont8" label="Accent 4" onAction="LtxRibbon_OnAction"/>
+            </menu>
+            <menuSeparator id="ltxSepC2"/>
+            <button id="ltxCopyFormat" label="Copy format (sticky)" imageMso="FormatPainter" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxPasteFormat" label="Paste format" imageMso="PasteFormatting" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <menu id="ltxStylesMenu" label="Styles" image="styles" size="large" keytip="Y" screentip="Named shape styles applied across the deck">
+            <button id="ltxStyleApply" label="Apply style to selection..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStyleSave" label="Save selection as style..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStyleSimilar" label="Apply this shape's style to similar shapes in deck" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStyleUpdate" label="Update all styled shapes in deck" imageMso="Refresh" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepY1"/>
+            <button id="ltxStyleClear" label="Detach selection from its style" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStyleManage" label="Edit styles file" onAction="LtxRibbon_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="ltxGrpText" label="Text">
+          <button id="ltxGrow" imageMso="FontSizeIncrease" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Grow font 1pt"/>
+          <button id="ltxShrink" imageMso="FontSizeDecrease" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Shrink font 1pt"/>
+          <button id="ltxBullets" imageMso="BulletsGallery" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Toggle bullets"/>
+          <menu id="ltxCaseMenu" imageMso="ChangeCaseGallery" size="normal" showLabel="false" screentip="Change case">
+            <button id="ltxUpper" label="UPPER" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxLower" label="lower" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTitleCase" label="Title Case" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSentence" label="Sentence case" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <button id="ltxSuper" imageMso="Superscript" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Superscript"/>
+          <button id="ltxSub" imageMso="Subscript" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Subscript"/>
+          <button id="ltxClearFmt" imageMso="ClearFormatting" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Clear bold/italic/colour"/>
+          <button id="ltxSpaceMore" imageMso="ParagraphSpacingIncrease" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="More line spacing"/>
+          <button id="ltxSpaceLess" imageMso="ParagraphSpacingDecrease" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Less line spacing"/>
+          <menu id="ltxFitMenu" imageMso="TextBoxInsert" size="normal" showLabel="false" screentip="Autofit, margins, wrap">
+            <button id="ltxAutofitNone" label="Autofit: off" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxAutofitShape" label="Autofit: resize shape to text" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxAutofitText" label="Autofit: shrink text" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepF1"/>
+            <button id="ltxMargins0" label="Margins: zero" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxMargins4" label="Margins: default" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxWordWrap" label="Toggle word wrap" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStripSpaces" label="Strip double spaces" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <menu id="ltxSelectMatch" keytip="S" label="Select Match" image="selectmatch" size="large">
+            <button id="ltxSelType" label="Same shape type" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSelFill" label="Same fill" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSelLine" label="Same line" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSelFont" label="Same font &amp; size" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSelFontColor" label="Same font colour" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSelSize" label="Same size" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepS1"/>
+            <button id="ltxSelText" label="All text shapes" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSelPictures" label="All pictures" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSelLinked" label="All Lattice links" onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <button id="ltxArrangeGrid" keytip="W" label="Arrange Shapes" imageMso="ObjectsArrangeMenu" size="large" onAction="LtxRibbon_OnAction" screentip="Arrange the selection in a grid"/>
+        </group>
+
+        <group id="ltxGrpShapes" label="Shapes">
+          <button id="ltxAlignLeft" keytip="1" imageMso="ObjectsAlignLeftSmart" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Align left (to first selected)"/>
+          <button id="ltxAlignCenter" keytip="2" imageMso="ObjectsAlignCenterHorizontalSmart" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Align centre"/>
+          <button id="ltxAlignRight" keytip="3" imageMso="ObjectsAlignRightSmart" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Align right"/>
+          <button id="ltxAlignTop" keytip="4" imageMso="ObjectsAlignTopSmart" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Align top"/>
+          <button id="ltxAlignMiddle" keytip="5" imageMso="ObjectsAlignMiddleVerticalSmart" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Align middle"/>
+          <button id="ltxAlignBottom" keytip="6" imageMso="ObjectsAlignBottomSmart" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Align bottom"/>
+          <button id="ltxDistH" keytip="7" imageMso="AlignDistributeHorizontally" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Distribute horizontally"/>
+          <button id="ltxDistV" keytip="8" imageMso="AlignDistributeVertically" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Distribute vertically"/>
+          <button id="ltxCenterSlide" imageMso="ObjectsAlignRelativeToContainerSmart" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Centre selection on slide"/>
+          <button id="ltxSameW" keytip="9" imageMso="SizeToControlWidth" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Same width as first"/>
+          <button id="ltxSameH" keytip="0" imageMso="SizeToControlHeight" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Same height as first"/>
+          <button id="ltxSameSize" keytip="Q" imageMso="SizeToControl" size="normal" showLabel="false" onAction="LtxRibbon_OnAction" screentip="Same size as first"/>
+          <menu id="ltxMoreShapes" imageMso="ObjectsArrangeMenu" size="normal" showLabel="false" screentip="More shape tools">
+            <button id="ltxGapH" label="Set horizontal gap..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxGapV" label="Set vertical gap..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxCenterH" label="Centre horizontally on slide" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxCenterV" label="Centre vertically on slide" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepM1"/>
+            <button id="ltxStretchL" label="Stretch to first: left edge" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStretchR" label="Stretch to first: right edge" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStretchT" label="Stretch to first: top edge" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxStretchB" label="Stretch to first: bottom edge" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSquare" label="Make square" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxFitSlide" label="Fit to slide margins" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepM2"/>
+            <button id="ltxSwap" label="Swap positions" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxCopyGeom" label="Copy size &amp; position from first" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxRememberPos" label="Remember position" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxApplyPos" label="Apply remembered position &amp; size" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxApplyPosOnly" label="Apply remembered position only" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepM3"/>
+            <button id="ltxFront" label="Bring to front" imageMso="ObjectBringToFront" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxBack" label="Send to back" imageMso="ObjectSendToBack" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxGroup" label="Group / ungroup" imageMso="ObjectsGroup" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepM4"/>
+            <button id="ltxToPicture" label="Convert to picture (EMF)" imageMso="PictureInsertFromFile" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxToPng" label="Convert to picture (PNG)" imageMso="PictureInsertFromFile" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxCropSlide" label="Crop picture to slide" imageMso="PictureCrop" onAction="LtxRibbon_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="ltxGrpImport" label="Import">
+          <button id="ltxImportPic" label="Import Excel" image="excel" size="large" keytip="I" onAction="LtxRibbon_OnAction" screentip="Import the Excel selection as a linked picture (fonts forced black)"/>
+          <menu id="ltxImportMenu" label="More" imageMso="PasteSpecialDialog" size="normal">
+            <button id="ltxImportPic2" label="Import as picture, fonts forced black" imageMso="PasteAsPicture" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxImportTable" label="Import as editable table" imageMso="TableInsertGallery" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxImportChart" label="Import Excel chart (vector picture)" imageMso="ChartInsert" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxImportNativeChart" label="Import Excel chart as native chart" imageMso="ChartTypeColumnInsertGallery" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxImportEmbed" label="Import range as embedded workbook" imageMso="ObjectInsert" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSetTableFont" label="Table font size..." onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <menu id="ltxTextLinkMenu" label="Link Text" imageMso="TextBoxInsert" size="normal" keytip="T" screentip="Link text in a shape to an Excel cell (e.g. a multiple or year in a title)">
+            <button id="ltxLinkTextWhole" label="Link whole text to active Excel cell" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxLinkTextSel" label="Link selected text to active Excel cell" onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepTL1"/>
+            <button id="ltxTextLinkInfo" label="Show text link" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxTextLinkEdit" label="Edit template..." onAction="LtxRibbon_OnAction"/>
+          </menu>
+          <toggleButton id="ltxBlackFonts" label="Black fonts" imageMso="FontColorPicker" size="normal" getPressed="LtxRibbon_GetPressed" onAction="LtxRibbon_OnToggle" screentip="Convert blue/green/red model fonts to black on import"/>
+          <menu id="ltxSizeMenu" label="Match Size" imageMso="SizeToControl" size="normal" screentip="How a refreshed object is sized">
+            <button id="ltxSizeWidth" label="Match width (default)" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSizeHeight" label="Match height" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSizeKeep" label="Keep width and height" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSizeSource" label="Use source size" onAction="LtxRibbon_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="ltxGrpLinks" label="Links">
+          <splitButton id="ltxRefreshSplit" size="large">
+            <button id="ltxRefreshSel" label="Refresh" image="refresh" keytip="R" onAction="LtxRibbon_OnAction" screentip="Refresh only the selected item(s) from Excel. Use the arrow for slide / deck."/>
+            <menu id="ltxRefreshMenu">
+              <button id="ltxRefreshSelOnly" label="Refresh only this item (selected)" imageMso="Refresh" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxRefreshSlide" label="Refresh this slide" onAction="LtxRibbon_OnAction"/>
+              <button id="ltxRefreshAll" label="Refresh whole deck" onAction="LtxRibbon_OnAction"/>
+              <menuSeparator id="ltxSepR1"/>
+              <button id="ltxOpenSources" label="Open all source workbooks" onAction="LtxRibbon_OnAction"/>
+            </menu>
+          </splitButton>
+          <button id="ltxExplorer" keytip="X" label="Explorer Pane" image="explorer" size="normal" onAction="LtxRibbon_OnAction"/>
+          <button id="ltxHighlight" label="Highlight Links" image="highlight" size="normal" keytip="H" onAction="LtxRibbon_OnAction" screentip="Show every linked object with a yellow overlay in slide sorter; run again to clear"/>
+          <toggleButton id="ltxAirplane" keytip="A" label="Airplane Mode" image="airplane" size="normal" getPressed="LtxRibbon_GetPressed" onAction="LtxRibbon_OnToggle" screentip="Never open closed workbooks during refresh"/>
+          <menu id="ltxLinkMenu" label="Link" image="link" size="normal">
+            <button id="ltxGoSource" label="Go to source" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxChangeSource" label="Change source workbook..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxBreakLink" label="Break link" onAction="LtxRibbon_OnAction"/>
+          </menu>
+        </group>
+
+        <group id="ltxGrpSettings" label="Lattice">
+          <menu id="ltxSettings" keytip="O" label="Settings" image="settings" size="large">
+            <button id="ltxSettingsDlg" label="Settings dialog..." imageMso="PropertySheet" onAction="LtxRibbon_OnAction" screentip="Every Lattice setting in one window"/>
+            <menuSeparator id="ltxSepSet0"/>
+            <button id="ltxFmtEmf" label="Picture format: EMF (vector)" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxFmtPng" label="Picture format: PNG" onAction="LtxRibbon_OnAction"/>
+            <toggleButton id="ltxHideGrid" label="Hide gridlines in pictures" getPressed="LtxRibbon_GetPressed" onAction="LtxRibbon_OnToggle"/>
+            <toggleButton id="ltxChartNoBorder" label="Remove chart borders in pictures" getPressed="LtxRibbon_GetPressed" onAction="LtxRibbon_OnToggle"/>
+            <toggleButton id="ltxCheckErrors" label="Warn about formula errors on import" getPressed="LtxRibbon_GetPressed" onAction="LtxRibbon_OnToggle"/>
+            <menuSeparator id="ltxSepO1"/>
+            <button id="ltxSetTemplate" label="Set deck template..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSetMargin" label="Import margin..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSetGapDef" label="Default gap..." onAction="LtxRibbon_OnAction"/>
+            <button id="ltxSetCheckWords" label="Deck Check words..." onAction="LtxRibbon_OnAction"/>
+            <menuSeparator id="ltxSepO2"/>
+            <button id="ltxKeytips" label="Shortcut card (Alt+T keytips)" imageMso="AccessibilityChecker" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxOpenLog" label="Open log" onAction="LtxRibbon_OnAction"/>
+            <button id="ltxAbout" getLabel="LtxRibbon_GetLabel" onAction="LtxRibbon_OnAction"/>
+          </menu>
+        </group>
+
+      </tab>
+    </tabs>
+  </ribbon>
+  <contextMenus>
+    <contextMenu idMso="ContextMenuShape">
+      <menuSeparator id="ltxCtxSep1"/>
+      <button id="ltxCtxRefresh" label="Lattice: Refresh this item" imageMso="Refresh" insertBeforeMso="Cut" onAction="LtxRibbon_OnAction"/>
+      <button id="ltxCtxGoSource" label="Lattice: Go to Excel source" imageMso="HyperlinkInsert" insertBeforeMso="Cut" onAction="LtxRibbon_OnAction"/>
+      <button id="ltxCtxConformLike" label="Lattice: Conform same slot on all slides" imageMso="FormatPainter" insertBeforeMso="Cut" onAction="LtxRibbon_OnAction"/>
+      <button id="ltxCtxBreak" label="Lattice: Break link" imageMso="HyperlinkRemove" insertBeforeMso="Cut" onAction="LtxRibbon_OnAction"/>
+    </contextMenu>
+    <contextMenu idMso="ContextMenuPicture">
+      <button id="ltxCtxRefreshPic" label="Lattice: Refresh this item" imageMso="Refresh" insertBeforeMso="Cut" onAction="LtxRibbon_OnAction"/>
+      <button id="ltxCtxGoSourcePic" label="Lattice: Go to Excel source" imageMso="HyperlinkInsert" insertBeforeMso="Cut" onAction="LtxRibbon_OnAction"/>
+    </contextMenu>
+    <contextMenu idMso="ContextMenuTable">
+      <button id="ltxCtxRefreshTbl" label="Lattice: Refresh this item" imageMso="Refresh" insertBeforeMso="Cut" onAction="LtxRibbon_OnAction"/>
+    </contextMenu>
+  </contextMenus>
+</customUI>

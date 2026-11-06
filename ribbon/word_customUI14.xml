@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="LtxWd_OnLoad">
+  <ribbon>
+    <tabs>
+      <tab id="wdTab" label="Lattice" keytip="L" insertAfterMso="TabHome">
+        <group id="wdGrpImport" label="Import">
+          <button id="wdImportPic" label="Excel" image="excel" size="large" keytip="E" onAction="LtxWd_OnAction" screentip="Import the Excel selection as a linked picture (fonts forced black)"/>
+          <menu id="wdImportMenu" label="More" imageMso="PasteSpecialDialog" size="normal">
+            <button id="wdImportTable" label="Import as editable table" onAction="LtxWd_OnAction"/>
+            <button id="wdImportChart" label="Import Excel chart" onAction="LtxWd_OnAction"/>
+          </menu>
+          <toggleButton id="wdBlackFonts" label="Black fonts" imageMso="FontColorPicker" size="normal" getPressed="LtxWd_GetPressed" onAction="LtxWd_OnToggle"/>
+        </group>
+        <group id="wdGrpLinks" label="Links">
+          <splitButton id="wdRefreshSplit" size="large">
+            <button id="wdRefreshSel" label="Refresh" image="refresh" keytip="R" onAction="LtxWd_OnAction" screentip="Refresh links in the selection"/>
+            <menu id="wdRefreshMenu">
+              <button id="wdRefreshAll" label="Refresh whole document" onAction="LtxWd_OnAction"/>
+            </menu>
+          </splitButton>
+          <button id="wdList" label="Links" image="explorer" size="normal" keytip="L" onAction="LtxWd_OnAction"/>
+          <toggleButton id="wdAirplane" label="Airplane Mode" image="airplane" size="normal" keytip="A" getPressed="LtxWd_GetPressed" onAction="LtxWd_OnToggle"/>
+          <menu id="wdLinkMenu" label="Link" imageMso="HyperlinkInsert" size="normal">
+            <button id="wdGoSource" label="Go to source" onAction="LtxWd_OnAction"/>
+            <button id="wdBreak" label="Break link" onAction="LtxWd_OnAction"/>
+          </menu>
+        </group>
+        <group id="wdGrpTools" label="Document">
+          <button id="wdStrip" label="Strip double spaces" imageMso="ClearFormatting" size="normal" keytip="S" onAction="LtxWd_OnAction"/>
+          <button id="wdTablesFit" label="Autofit tables" imageMso="TableAutoFitMenu" size="normal" keytip="F" onAction="LtxWd_OnAction"/>
+          <button id="wdPicsWidth" label="Fit pictures" imageMso="PictureInsertFromFile" size="normal" keytip="P" onAction="LtxWd_OnAction"/>
+        </group>
+        <group id="wdGrpLattice" label="Lattice">
+          <button id="wdKeytips" label="Shortcuts" image="shortcuts" size="large" keytip="K" onAction="LtxWd_OnAction"/>
+          <button id="wdAbout" label="About" imageMso="Info" size="normal" onAction="LtxWd_OnAction"/>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>

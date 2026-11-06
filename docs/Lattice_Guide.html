@@ -1,0 +1,296 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Lattice guide</title><style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+:root{--dark:#141413;--light:#faf9f5;--mid:#b0aea5;--lgray:#e8e6dc;--orange:#d97757;--blue:#6a9bcc;--green:#788c5d;--ink2:#3d3b36}
+*{box-sizing:border-box}html,body{margin:0;background:#d8d6cc}
+body{font-family:Lora,Georgia,serif;color:var(--dark);font-size:10.6px;line-height:1.5}
+h1,h2,h3,h4,.pp{font-family:Poppins,Arial,sans-serif}
+.sheet{width:210mm;height:297mm;margin:0 auto;padding:11mm 12mm;background:var(--light);position:relative;overflow:hidden;page-break-after:always;display:flex;flex-direction:column}
+.sheet.dark{background:var(--dark);color:var(--light)}
+.sheet.cover{background:#171513}
+.hdr{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--lgray);padding-bottom:5px;margin-bottom:9px}
+.dark .hdr{border-color:#2d2c29}
+.hdr .sec{font-family:Poppins,Arial,sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange)}
+.hdr .num{font-family:Poppins,Arial,sans-serif;font-size:9px;color:var(--mid)}
+h2{font-size:24px;font-weight:600;letter-spacing:-.6px;margin:0 0 4px;line-height:1.1}
+h3{font-size:12.5px;font-weight:600;margin:0 0 3px}
+h4{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin:0 0 4px;font-weight:600}
+p{margin:0 0 6px}p.lead{font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.card{background:#fff;border:1px solid var(--lgray);border-radius:12px;padding:10px 12px}
+.dark .card{background:#1e1d1b;border-color:#2d2c29;color:var(--light)}
+ul{margin:0;padding-left:14px}li{margin:2px 0}
+.fig{width:100%;display:block;border-radius:8px;border:1px solid var(--lgray);box-shadow:0 6px 18px rgba(20,20,19,.08);background:#fff}
+.cap{font-family:Poppins,Arial,sans-serif;font-size:8.5px;color:var(--mid);margin-top:4px}
+.cap b{color:var(--dark);font-weight:600}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:9px}.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+.g21{display:grid;grid-template-columns:2fr 1fr;gap:9px}.g12{display:grid;grid-template-columns:1fr 2fr;gap:9px}
+.gap{margin-top:9px}.grow{flex:1;min-height:0}
+.tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.tile{background:#fff;border:1px solid var(--lgray);border-radius:12px;padding:10px 10px 8px}
+.tile .n{font-family:Poppins,Arial,sans-serif;font-size:24px;font-weight:600;letter-spacing:-1px;line-height:1}
+.tile .l{font-family:Poppins,Arial,sans-serif;font-size:8.5px;color:var(--mid);margin-top:3px;text-transform:uppercase;letter-spacing:1px}
+.tile.o .n{color:var(--orange)}.tile.b .n{color:var(--blue)}.tile.g .n{color:var(--green)}
+.chip{display:inline-block;font-family:Poppins,Arial,sans-serif;font-size:8.5px;font-weight:500;padding:2px 8px;border-radius:999px;background:var(--lgray);margin:2px 3px 2px 0}
+.chip.o{background:var(--orange);color:#fff}.chip.b{background:var(--blue);color:#fff}.chip.g{background:var(--green);color:#fff}.chip.d{background:var(--dark);color:var(--light)}
+.k{display:inline-block;font-family:Poppins,Arial,sans-serif;font-size:8.5px;font-weight:600;background:var(--dark);color:var(--light);padding:1px 6px;border-radius:4px;margin:0 1px}
+.k.o{background:var(--orange)}
+.legend span{display:inline-flex;align-items:center;margin-right:9px;font-size:9.5px}.legend i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:4px}
+table.cmp{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--lgray);border-radius:10px;overflow:hidden}
+table.cmp th{font-family:Poppins,Arial,sans-serif;font-weight:600;font-size:9.5px;text-align:left;background:var(--dark);color:var(--light);padding:7px 9px}
+table.cmp th.lat{color:var(--orange)}table.cmp td{padding:4.5px 9px;border-top:1px solid var(--lgray);font-size:9.8px}table.cmp td.lat{background:#fdf4ef}
+.pill{display:inline-block;font-style:normal;font-family:Poppins,Arial,sans-serif;font-size:8.5px;font-weight:600;padding:1px 8px;border-radius:999px}
+.pill.yes{background:var(--green);color:#fff}.pill.part{background:var(--blue);color:#fff}.pill.no{background:var(--lgray);color:#6b6965}.pill.na{color:var(--mid)}
+.quote{font-size:15px;font-style:italic;line-height:1.4;color:var(--ink2);border-left:3px solid var(--orange);padding-left:10px;margin:6px 0 8px}
+.dark .quote{color:var(--lgray)}
+.foot{margin-top:auto;padding-top:6px;border-top:1px solid var(--lgray);font-family:Poppins,Arial,sans-serif;font-size:8px;color:var(--mid);display:flex;justify-content:space-between}
+.dark .foot{border-color:#2d2c29}
+.cover .eyebrow{font-family:Poppins,Arial,sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin:30px 0 16px}
+.cover h1{font-size:96px;font-weight:600;line-height:.92;margin:0 0 18px;letter-spacing:-3px}
+.cover .tag{font-size:17px;font-style:italic;color:var(--lgray);max-width:150mm;line-height:1.45}
+.cover .strip{margin:18px 0 0}.cover .strip span{display:inline-block;font-family:Poppins,Arial,sans-serif;font-size:10px;font-weight:500;padding:6px 13px;border-radius:999px;border:1px solid rgba(250,249,245,.35);margin:0 6px 6px 0}
+.cover .strip span.o{background:var(--orange);border-color:var(--orange);color:var(--dark)}
+.cover .collage{position:relative;height:112mm;margin-top:14mm}
+.cover .collage img{position:absolute;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,.45);border:1px solid rgba(250,249,245,.15)}
+.cover .collage .a{left:0;top:0;width:120mm}.cover .collage .b{right:0;top:38mm;width:92mm;transform:rotate(-2deg)}.cover .collage .c{left:16mm;top:68mm;width:72mm;transform:rotate(1.5deg)}
+.cover .dots{position:absolute;right:-50mm;bottom:-50mm;width:150mm;height:150mm;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(217,119,87,.75),rgba(217,119,87,0) 62%)}
+.callouts{position:relative}.callouts .c{position:absolute;font-family:Poppins,Arial,sans-serif;font-size:8px;font-weight:600;background:var(--orange);color:#fff;padding:2px 7px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.rep{border:1px solid var(--lgray);border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 6px 18px rgba(20,20,19,.08);font-family:Segoe UI,Arial,sans-serif}
+.rep .rb{background:#1f3864;color:#fff;padding:6px 10px;display:flex;justify-content:space-between;align-items:baseline}.rep .rb b{font-size:11px;letter-spacing:.5px}.rep .rb span{font-size:7.5px;color:#bdd7ee}
+.rep .ra{height:3px;background:#2e75b6}.rep .rt{width:100%;border-collapse:collapse;font-size:8.5px}.rep .rt th{background:#dee5f0;color:#1f3864;font-weight:700;text-align:left;padding:4px 7px;border-bottom:1px solid #1f3864}
+.rep .rt td{padding:3px 7px;border-bottom:1px solid #ebeef3;text-align:right;position:relative}.rep .rt td:first-child{text-align:left}.rep .rt td.m{color:#888;font-size:7.5px;text-align:left}.rep .rt tr.z td{background:#f7f8fa}
+.rep .rt td.up{color:#00703c;font-weight:600}.rep .rt td.dn{color:#c00000;font-weight:600}.rep .rt td.up i,.rep .rt td.dn i{position:absolute;left:4px;top:3px;bottom:3px;background:rgba(46,117,182,.22);border-radius:2px;z-index:0;max-width:calc(100% - 8px)}.rep .rt td.dn i{background:rgba(192,0,0,.18)}
+.toc{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:5mm;font-family:Poppins,Arial,sans-serif;font-size:9.5px;color:var(--lgray)}.toc b{color:var(--orange);margin-right:4px}
+.rule{height:3px;border-radius:2px;background:linear-gradient(90deg,var(--orange),var(--blue),var(--green));margin:6px 0 8px}
+@page{size:A4;margin:0}@media print{html,body{background:#fff}.sheet{margin:0}}</style></head><body>
+
+<section class="sheet dark cover"><div class="dots"></div>
+<div class="eyebrow">An open add-in for Excel, PowerPoint and Word</div>
+<img src="brand/wordmark_dark.png" alt="Lattice" style="height:34mm;display:block;margin:0 0 14px -7mm;clip-path:inset(3% 2% 3% 2%)">
+<p class="tag">The mechanics bankers, private-equity associates and hedge-fund analysts pay Macabacus and think-cell for, rebuilt in plain VBA with a PowerShell build. No licence server, no telemetry. Installs per user in a minute.</p>
+<div class="strip"><span class="o">What it does</span><span>What it deliberately doesn't</span><span>Versus Macabacus and think-cell</span><span>How it was built</span></div>
+<div class="collage"><img class="a" src="guide_img/fig_trace.png"><img class="b" src="guide_img/fig_chart.png"><img class="c" src="guide_img/fig_slide_stickers.png"></div>
+<div class="toc"><span><b>02</b> Why this exists</span><span><b>03</b> Audit without the mouse</span><span><b>04</b> Colour, cases, charts</span><span><b>05</b> Links that refresh</span><span><b>06</b> Slide hygiene</span><span><b>07</b> Versus Macabacus and think-cell</span><span><b>08</b> How it is built</span></div>
+
+<div class="foot"><span>Guide &middot; November 2026</span><span>Built by one person directing an AI coding agent, tested against real Office</span></div>
+</section>
+
+<section class="sheet">
+<div class="hdr"><span class="sec">Why this exists</span><span class="num">02</span></div>
+<h2>Two subscriptions, one afternoon of mechanics</h2>
+<div class="g21">
+<div>
+<p class="lead">Every deal team runs on the same hundred gestures: colour the inputs blue, jump to the precedent, flip the sign, paste the table into the deck and refresh it before the meeting, align the boxes, stamp DRAFT on the title. Macabacus and think-cell sell those gestures. Lattice rebuilds them.</p>
+<p>Nothing was decompiled or copied. The public feature lists and documentation screenshots of the commercial products were the specification; the implementation is original VBA, organised around the three things a working analyst actually touches all day: the model, the link into the deck, and the slide itself.</p>
+<p>Lattice was written by one person directing an AI coding agent over a handful of sessions, each round installed and swept through COM-driven tests against real Excel, PowerPoint and Word before being used on live work. The repository history records what landed when, including the mistakes: a keytip Office silently refused, a hidden Excel instance that hijacked imports, a chart label that lost its name.</p>
+<div class="quote">It is not that the mechanics are hard. It is that nobody had bothered to write them down in the open.</div>
+<h4>Three surfaces, one design</h4>
+<p>One <b>Lattice</b> tab per app, opened with <span class="k o">Alt</span><span class="k">K</span> in Excel and <span class="k o">Alt</span><span class="k">L</span> in PowerPoint and Word. Everything Lattice draws follows one visual system: a navy and azure palette, tiled icons, windows with a title band and column headers, report sheets with an accent line and a frozen header, a Settings dialog per app.</p>
+</div>
+<div>
+<div class="tiles">
+<div class="tile o"><div class="n">402</div><div class="l">ribbon commands</div></div>
+<div class="tile b"><div class="n">37</div><div class="l">Excel shortcuts, rebindable</div></div>
+<div class="tile g"><div class="n">3</div><div class="l">add-ins, one tab each</div></div>
+<div class="tile"><div class="n">9.1k</div><div class="l">lines of VBA</div></div>
+<div class="tile"><div class="n">25</div><div class="l">COM test scripts</div></div>
+<div class="tile"><div class="n">~1 s</div><div class="l">per linked refresh</div></div>
+</div>
+<div class="card gap"><h4>Where the time goes</h4>
+<ul><li><b>Model</b>: colour, format, audit, cases, charts.</li><li><b>Link</b>: export once, refresh for the rest of the deal.</li><li><b>Slide</b>: align, conform, stamp, paginate, check.</li></ul></div>
+<div class="card gap"><h4>Honest status</h4><p>Personal-use quality on Microsoft 365 for Windows. Not every corner of the commercial tools is covered; page 7 lists the gaps.</p></div>
+</div>
+</div>
+<div class="gap card"><h4>How a link works</h4><svg viewBox="0 0 640 230" xmlns="http://www.w3.org/2000/svg" font-family="Poppins, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d97757"/></marker></defs>
+<rect x="10" y="30" width="180" height="150" rx="14" fill="#fff" stroke="#e8e6dc"/><text x="100" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#141413">Excel range</text>
+<g font-size="10" fill="#141413"><rect x="30" y="72" width="140" height="18" fill="#788c5d" opacity=".15"/><text x="36" y="85">Revenue  1,250  1,350</text><text x="36" y="105" fill="#6a9bcc">Costs      (800)   (800)</text><text x="36" y="125" fill="#d97757">EBITDA     450     550</text></g>
+<text x="100" y="160" text-anchor="middle" font-size="9" fill="#b0aea5">defined name keeps the link alive</text>
+<path d="M195,80 L255,80" stroke="#d97757" stroke-width="2.5" marker-end="url(#a)"/><text x="225" y="70" text-anchor="middle" font-size="9" fill="#141413">export</text>
+<rect x="260" y="30" width="200" height="150" rx="14" fill="#141413"/><text x="360" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#faf9f5">Slide</text>
+<rect x="285" y="72" width="150" height="62" rx="6" fill="#faf9f5"/><g font-size="9" fill="#141413"><text x="292" y="88">Revenue  1,250  1,350</text><text x="292" y="103">Costs      (800)   (800)</text><text x="292" y="118" font-weight="600">EBITDA     450     550</text></g>
+<text x="360" y="155" text-anchor="middle" font-size="9" fill="#b0aea5">picture, fonts forced black, tagged</text>
+<path d="M465,80 L525,80" stroke="#d97757" stroke-width="2.5" marker-end="url(#a)"/><text x="495" y="70" text-anchor="middle" font-size="9" fill="#141413">refresh</text>
+<rect x="530" y="30" width="100" height="150" rx="14" fill="#fff" stroke="#e8e6dc"/><text x="580" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#141413">Any time</text>
+<g font-size="9" fill="#141413"><text x="580" y="84" text-anchor="middle">item</text><text x="580" y="100" text-anchor="middle">slide</text><text x="580" y="116" text-anchor="middle">deck</text><text x="580" y="140" text-anchor="middle" fill="#788c5d" font-weight="600">~1 s each</text></g>
+<path d="M360,185 C360,215 100,215 100,185" stroke="#6a9bcc" stroke-width="2" fill="none" stroke-dasharray="4 3" marker-end="url(#a)"/><text x="230" y="222" text-anchor="middle" font-size="9" fill="#6a9bcc">go to source / change source / break link / V1 vs V2 prompt / airplane mode</text>
+</svg></div>
+<div class="gap g3">
+<div class="card"><h4>Hedge-fund analyst</h4><p>Earnings day: paste the KPI table into the note, refresh it after the model update, flip the sign on the bridge, walk the EPS build with Ctrl+[ before the call.</p></div>
+<div class="card"><h4>PE associate</h4><p>IC memo week: run Base, Upside and Downside into one table, football field for the valuation page, DRAFT on every slide until the partner signs off.</p></div>
+<div class="card"><h4>Banker</h4><p>Pitch at 2 a.m.: Auto Align the boxes, conform the title fonts, agenda and page numbers in one go, Deck Check before it goes to the printer.</p></div></div>
+
+<div class="foot"><span>Lattice guide</span><span>02</span></div>
+</section>
+
+<section class="sheet">
+<div class="hdr"><span class="sec">Excel &middot; auditing</span><span class="num">03</span></div>
+<h2>Audit a model without touching the mouse</h2>
+<p class="lead">The jump keys do what Capital IQ's tracer and Macabacus's trace window do, and the window closes on Enter so the next key is F2.</p>
+<div class="g21">
+<div><img class="fig" src="guide_img/fig_trace.png"><div class="cap"><b>Trace In.</b> A tree of precedents with values and formulas. Up and Down move Excel live, Right expands a reference into its own inputs, Enter jumps to the cell and closes the window, Ctrl+E swaps the value and formula columns.</div></div>
+<div>
+<div class="card"><h3>One press each</h3>
+<p><span class="k">Ctrl</span><span class="k">[</span> goes to the precedent of the active cell, <span class="k">Ctrl</span><span class="k">]</span> to its dependent, <span class="k">Ctrl</span><span class="k">Shift</span><span class="k">Enter</span> returns. When several candidates exist a picker opens; your arrow keys move through it while Excel follows.</p>
+<p>References are resolved explicitly through workbook and sheet, so cross-sheet jumps and sheet names with spaces work from any window.</p></div>
+<div class="card gap"><h3>Visualize</h3><p>Highlight hard-codes <span class="k">Ctrl</span><span class="k">Shift</span><span class="k">K</span>, formula flow <span class="k">Ctrl</span><span class="k">Shift</span><span class="k">L</span>, select errors, inconsistent formulas and inputs, arrows on and off.</p></div>
+</div>
+</div>
+<div class="gap g12">
+<div><img class="fig" src="guide_img/fig_modelcheck.png"><div class="cap"><b>Model Check pane.</b> Hard-codes inside formulas, inconsistent rows, errors and masked errors; one click jumps, Fix pulls the number into its own input cell.</div></div>
+<div><img class="fig" src="guide_img/fig_audit.png"><div class="cap"><b>Audit report.</b> The same findings as a styled sheet with filters, counts and the offending formula, ready to send to the person who built the tab.</div></div>
+</div>
+<div class="gap"><svg viewBox="0 0 640 120" xmlns="http://www.w3.org/2000/svg" font-family="Poppins, Arial, sans-serif">
+<g font-size="10" fill="#141413"><rect x="0" y="10" width="640" height="100" rx="14" fill="#fff" stroke="#e8e6dc"/>
+<text x="20" y="36" font-size="11" font-weight="600">The audit loop, keyboard only</text>
+<g font-weight="600" font-size="10"><rect x="20" y="52" width="44" height="22" rx="5" fill="#141413"/><text x="42" y="67" text-anchor="middle" fill="#faf9f5">Ctrl [</text><text x="72" y="67">jump to the precedent</text>
+<rect x="200" y="52" width="44" height="22" rx="5" fill="#141413"/><text x="222" y="67" text-anchor="middle" fill="#faf9f5">Ctrl ]</text><text x="252" y="67">jump to the dependent</text>
+<rect x="400" y="52" width="104" height="22" rx="5" fill="#141413"/><text x="452" y="67" text-anchor="middle" fill="#faf9f5">Ctrl Shift Enter</text><text x="512" y="67">back</text>
+<rect x="20" y="82" width="86" height="22" rx="5" fill="#d97757"/><text x="63" y="97" text-anchor="middle" fill="#fff">Ctrl Shift [</text><text x="114" y="97">Trace In window: Up / Down follow, Right expands, Enter jumps and closes, F2 edits</text></g></g>
+</svg></div>
+<div class="gap g3">
+<div class="card"><h4>Model Check finds</h4><p>Hard-codes inside formulas (a 1.05 in a growth line), formulas that break the pattern of their row, #REF! and #DIV/0!, errors masked by IFERROR, numeric inputs nothing reads.</p></div>
+<div class="card"><h4>The picker</h4><p>When a cell has several precedents, a small window lists them with values and formulas. Arrow keys move Excel live; Enter or a double-click goes there and closes it.</p></div>
+<div class="card"><h4>Trace Out</h4><p>The same tree in the other direction: who consumes this cell, down to the outputs linked into the deck. <span class="k">Ctrl</span><span class="k">Shift</span><span class="k">]</span> opens it.</p></div></div>
+
+<div class="foot"><span>Lattice guide</span><span>03</span></div>
+</section>
+
+<section class="sheet">
+<div class="hdr"><span class="sec">Excel &middot; modelling</span><span class="num">04</span></div>
+<h2>Colour, cases and charts that explain themselves</h2>
+<div class="g2">
+<div><img class="fig" src="guide_img/fig_autocolor.png"><div class="cap"><b>AutoColor.</b> Blue inputs, black formulas, green links to other sheets, purple external links, dark red where a number is buried inside a formula (the <i>1.08</i> and the <i>+20</i> above). Selection, sheet or workbook, in bulk; a Black Fonts switch reverses it all for a print.</div>
+<div class="legend gap"><span><i style="background:#0000ff"></i>input</span><span><i style="background:#141413"></i>formula</span><span><i style="background:#008000"></i>sheet link</span><span><i style="background:#800080"></i>external</span><span><i style="background:#800000"></i>hard-code inside</span></div></div>
+<div><img class="fig" src="guide_img/fig_dropdown.png"><div class="cap"><b>Case drop-down.</b> The bare Forms combo every model hand-builds: input range = the case names, cell link = the selected number. Copies on other tabs keep working.</div>
+<div class="gap"><div class="rep"><div class="rb"><b>LATTICE &nbsp;|&nbsp; CASE RUNNER</b><span>Case cell Drivers!B2 &nbsp;|&nbsp; 3 cases &nbsp;|&nbsp; 5 outputs</span></div><div class="ra"></div>
+<table class="rt"><tr><th>Output</th><th>Cell</th><th>Base</th><th>Upside</th><th>Downside</th><th>Upside vs Base</th><th>Downside vs Base</th></tr>
+<tr><td>Revenue</td><td class="m">Model!B17</td><td>1,250</td><td>1,400</td><td>1,050</td><td class="up"><i style="width:60%"></i>+12.0%</td><td class="dn"><i style="width:80%"></i>-16.0%</td></tr>
+<tr class="z"><td>EBITDA</td><td class="m">Model!B18</td><td>350</td><td>434</td><td>231</td><td class="up"><i style="width:100%"></i>+24.0%</td><td class="dn"><i style="width:100%"></i>-34.0%</td></tr>
+<tr><td>Net debt / EBITDA</td><td class="m">Model!B19</td><td>3.1x</td><td>2.6x</td><td>4.4x</td><td class="dn"><i style="width:40%"></i>-16.1%</td><td class="up"><i style="width:100%"></i>+41.9%</td></tr>
+<tr class="z"><td>IRR</td><td class="m">Model!B20</td><td>18.0%</td><td>26.0%</td><td>7.0%</td><td class="up"><i style="width:100%"></i>+44.4%</td><td class="dn"><i style="width:100%"></i>-61.1%</td></tr>
+<tr><td>MOIC</td><td class="m">Model!B21</td><td>2.3x</td><td>3.1x</td><td>1.4x</td><td class="up"><i style="width:85%"></i>+34.8%</td><td class="dn"><i style="width:95%"></i>-39.1%</td></tr></table></div>
+</div><div class="cap"><b>Case runner.</b> Writes 1..n into the case cell, recalculates, reads the outputs you pick and tabulates them with change versus base, red and green, data bars.</div></div>
+</div>
+<div class="gap g21">
+<div><div class="callouts"><img class="fig" src="guide_img/fig_chart.png"><span class="c" style="left:36%;top:4%">CAGR arrow</span><span class="c" style="left:70%;top:22%">difference arrow</span><span class="c" style="left:14%;top:30%">live totals</span></div>
+<div class="cap"><b>Chart annotations on native Excel charts.</b> The totals are a real series driven by formulas on a hidden sheet, so they move with the data; the arrows are shapes inside the chart, so they follow it into the deck through the picture link.</div></div>
+<div class="card"><h3>Formula keys</h3>
+<ul><li><span class="k">Ctrl</span><span class="k">Shift</span><span class="k">Q</span> cycle $ anchors</li><li><span class="k">Ctrl</span><span class="k">Shift</span><span class="k">N</span> flip sign (toggles, no stacked minus)</li><li><span class="k">Ctrl</span><span class="k">Shift</span><span class="k">E</span> IFERROR wrap and unwrap</li><li><span class="k">Ctrl</span><span class="k">Shift</span><span class="k">R</span> / <span class="k">D</span> fast fill to the header's edge</li><li><span class="k">Ctrl</span><span class="k">Shift</span><span class="k">M</span> CAGR cell</li><li><span class="k">Ctrl</span><span class="k">Shift</span><span class="k">1</span>&hellip;<span class="k">6</span> number, percent, multiple, date, currency cycles</li></ul>
+<h4 style="margin-top:8px">Library</h4>
+<span class="chip">LBO</span><span class="chip">DCF</span><span class="chip">Distribution waterfall</span><span class="chip">Accretion / dilution</span><span class="chip">Returns IRR / MOIC</span><span class="chip">Debt schedule</span><span class="chip">Credit statistics</span><span class="chip">Black-Scholes</span><span class="chip">2-way sensitivity</span><span class="chip">Scenario switch</span><span class="chip">Timeline</span><span class="chip o">Run cases</span><span class="chip">Comps stats</span><span class="chip">Football field</span><span class="chip">Waterfall</span>
+</div>
+</div>
+<div class="foot"><span>Lattice guide</span><span>04</span></div>
+</section>
+
+<section class="sheet">
+<div class="hdr"><span class="sec">PowerPoint &middot; links</span><span class="num">05</span></div>
+<h2>Export once. Refresh for the rest of the deal.</h2>
+<div class="g21">
+<div><img class="fig" src="guide_img/fig_slide_link.png"><div class="cap"><b>A linked picture.</b> The Excel block arrives with gridlines removed and every font forced black; the chevrons are Turbo Shapes; the stamp is a Sticker. Right-click the picture for Refresh this item, Go to source, Conform and Break link.</div></div>
+<div class="card"><h3>Five forms of export</h3>
+<ul><li><b>Picture</b> <span class="k">Ctrl</span><span class="k">Alt</span><span class="k">R</span>, fonts forced black, EMF or PNG</li><li><b>Editable table</b> <span class="k">Ctrl</span><span class="k">Alt</span><span class="k">T</span>, keeps fills and borders</li><li><b>Chart</b> as vector picture <span class="k">Ctrl</span><span class="k">Alt</span><span class="k">C</span></li><li><b>Native PowerPoint chart</b></li><li><b>Embedded workbook</b></li></ul>
+<p class="gap">Match Width, Height or Size replaces the selected shape in the deck in place; new items land inside the import margin.</p>
+<h4 style="margin-top:6px">Also to Word</h4><p>Picture or table at the cursor, <span class="k">Ctrl</span><span class="k">Alt</span><span class="k">W</span>; refresh selection or document.</p></div>
+</div>
+<div class="gap g3">
+<div class="card"><h3>Links that survive</h3><p>Each link carries the workbook, sheet, range and a defined name, so rows can move. When a V2 of the model is open instead of V1, one prompt repoints every link. When the file moved, a picker. In airplane mode nothing is opened from disk.</p></div>
+<div class="card"><h3>Fast by construction</h3><p>The black-font pass runs inside Excel through Application.Run instead of cell by cell over COM: a 40&times;10 block refreshes in about a second, and the refresh binds to your visible Excel even when a hidden instance exists.</p></div>
+<div class="card"><h3>Text links</h3><p>A number or a year inside a title can be tied to a cell: the sentence keeps its wording, the figure refreshes with the deck. Explorer pane lists every link; Highlight Links marks them in slide sorter.</p></div>
+</div>
+<div class="gap g12">
+<div><img class="fig" src="guide_img/fig_settings_ppt.png"><div class="cap"><b>Settings.</b> Every option in one window, Enter saves.</div></div>
+<div class="card"><h3>Shapes</h3><p>Align to the first shape or the slide, distribute, set gaps, same width / height / size, stretch, swap, nudge, arrange in a grid, <b>Auto Align</b> (snaps a loose selection to its implied rows and columns), align to the body area, arrange inside a container, stack, z-order, Select Match (same fill, font or size), convert to picture, crop to slide, remember and apply a position.</p>
+<p>Keytips: <span class="k o">Alt</span><span class="k">L</span> then <span class="k">1</span>&ndash;<span class="k">6</span> for the six alignments, <span class="k">7</span> <span class="k">8</span> distribute, <span class="k">9</span> <span class="k">0</span> <span class="k">Q</span> same width, height, size.</p></div>
+</div>
+<div class="gap tiles"><div class="tile g"><div class="n">0.9 s</div><div class="l">refresh of a 40 x 10 block</div></div><div class="tile b"><div class="n">5</div><div class="l">forms of export</div></div><div class="tile o"><div class="n">3</div><div class="l">refresh scopes: item, slide, deck</div></div></div>
+<div class="gap card"><h4>Refresh, step by step</h4><p>Every link is read from its tags; the workbook is found among all running Excel instances before anything is opened from disk; the range is copied inside Excel with gridlines hidden and fonts forced black; the picture is pasted over the old one keeping position, size mode, z-order and name; the model's calculation mode and colours are restored. Formula errors in the range are reported once at the end.</p></div>
+
+<div class="foot"><span>Lattice guide</span><span>05</span></div>
+</section>
+
+<section class="sheet">
+<div class="hdr"><span class="sec">PowerPoint &middot; slide hygiene</span><span class="num">06</span></div>
+<h2>Status marks, agendas and a deck that checks itself</h2>
+<div class="g21">
+<div><img class="fig" src="guide_img/fig_slide_stickers.png"><div class="cap"><b>Stickers.</b> Harvey balls from Turbo Shapes cycle a quarter per click; traffic lights, ticks and crosses sit next to the selected shape; stamps (DRAFT, CONFIDENTIAL, PRELIMINARY, FOR DISCUSSION, ILLUSTRATIVE) go top-right, one per slide, replaced on re-run, DRAFT on every slide in one go, removed in one go.</div></div>
+<div class="card"><h3>Presentation</h3>
+<ul><li><b>Agenda</b>: sections, divider slides and a table of contents kept in sync with the deck.</li><li><b>Pagination</b>: page numbers in your format, blank pages.</li><li><b>Deck Check</b>: leftover placeholders, forbidden words (TBD, lorem, XXX), off-slide shapes, mixed fonts.</li><li><b>Deck Tools</b>: harmonise and conform fonts across titles and subtitles, table formats, chart palette, a notes collector, per-section PDFs.</li><li>Template, backup, PDF, email.</li></ul></div>
+</div>
+<div class="gap g3">
+<div class="card"><h3>Turbo Shapes</h3><p>Harvey balls, chevrons and chevron processes, timeline, numbered circles, sticky notes, callouts, rounded rectangles, arrows, brackets, braces, lines. Placed next to the selection, themed.</p></div>
+<div class="card"><h3>Styles and colour</h3><p>Save the look of a shape and apply it to a selection or the whole deck; colour cycles, hex and theme colours, a format painter that survives across slides; text tools for case, bullets, superscripts and double spaces.</p></div>
+<div class="card"><h3>Library</h3><p>A Slide Library with Slide Links: insert a slide from the library and later pull the library's version back, or push your edited slide into it. Master Shapes keeps your own shape library.</p></div>
+</div>
+<div class="gap card"><h4>Keytips in PowerPoint and Word</h4>
+<span class="chip d">Alt L N</span> new deck &nbsp; <span class="chip d">Alt L G</span> agenda &nbsp; <span class="chip d">Alt L P</span> pagination &nbsp; <span class="chip d">Alt L K</span> deck check &nbsp; <span class="chip d">Alt L D</span> deck tools &nbsp; <span class="chip d">Alt L B</span> library &nbsp; <span class="chip o">Alt L J</span> stickers &nbsp; <span class="chip d">Alt L U</span> turbo &nbsp; <span class="chip d">Alt L M</span> master &nbsp; <span class="chip d">Alt L C</span> colour &nbsp; <span class="chip d">Alt L Y</span> styles &nbsp; <span class="chip d">Alt L S</span> select match &nbsp; <span class="chip d">Alt L W</span> arrange &nbsp; <span class="chip d">Alt L I</span> import &nbsp; <span class="chip d">Alt L T</span> link text &nbsp; <span class="chip d">Alt L R</span> refresh &nbsp; <span class="chip d">Alt L X</span> explorer &nbsp; <span class="chip d">Alt L H</span> highlight &nbsp; <span class="chip d">Alt L A</span> airplane &nbsp; <span class="chip d">Alt L O</span> settings</div>
+<div class="gap g2">
+<div class="card"><h4>Deck Check looks for</h4><span class="chip">empty placeholders</span><span class="chip">TBD / XXX / lorem</span><span class="chip">shapes off the slide</span><span class="chip">mixed fonts</span><span class="chip">missing page numbers</span><span class="chip">inconsistent titles</span><p class="gap">Run it before a deck leaves the building: every finding is listed with its slide number and selects the shape when clicked.</p></div>
+<div class="card"><h4>Agenda in practice</h4><p>Sections become divider slides and a table of contents; rename or reorder a section and the contents page follows. Pagination writes "n / N" or your own format and skips the title and dividers if you ask. Deck Tools can print one PDF per section for the data room.</p></div></div>
+
+<div class="gap card"><h4>Turbo Shapes and Stickers at a glance</h4>
+<svg viewBox="0 0 660 74" xmlns="http://www.w3.org/2000/svg" font-family="Poppins, Arial, sans-serif" font-size="8">
+<g fill="#1f3864"><path d="M6,14 L52,14 L62,30 L52,46 L6,46 L16,30 z"/><path d="M58,14 L104,14 L114,30 L104,46 L58,46 L68,30 z" opacity=".8"/><path d="M110,14 L156,14 L166,30 L156,46 L110,46 L120,30 z" opacity=".6"/></g>
+<g fill="#fff" font-size="8" font-weight="600" text-anchor="middle"><text x="34" y="33">Step 1</text><text x="86" y="33">Step 2</text><text x="138" y="33">Step 3</text></g>
+<text x="86" y="64" text-anchor="middle" fill="#b0aea5">chevron process</text>
+<g transform="translate(190,16)"><circle cx="14" cy="14" r="13" fill="#fff" stroke="#141413"/><circle cx="48" cy="14" r="13" fill="#fff" stroke="#141413"/><path d="M48,1 A13,13 0 0 1 61,14 L48,14 z" fill="#141413"/><circle cx="82" cy="14" r="13" fill="#fff" stroke="#141413"/><path d="M82,1 A13,13 0 0 1 82,27 L82,14 z" fill="#141413"/><circle cx="116" cy="14" r="13" fill="#fff" stroke="#141413"/><path d="M116,1 A13,13 0 1 1 103,14 L116,14 z" fill="#141413"/><circle cx="150" cy="14" r="13" fill="#141413"/></g>
+<text x="272" y="64" text-anchor="middle" fill="#b0aea5">Harvey balls, cycle a quarter per click</text>
+<g transform="translate(372,20)"><circle cx="10" cy="10" r="9" fill="#c00000" stroke="#fff"/><circle cx="34" cy="10" r="9" fill="#ffc000" stroke="#fff"/><circle cx="58" cy="10" r="9" fill="#00b050" stroke="#fff"/><text x="84" y="16" font-size="16" font-weight="700" fill="#008c3c">&#10004;</text><text x="104" y="16" font-size="16" font-weight="700" fill="#c00000">&#10006;</text></g>
+<text x="432" y="64" text-anchor="middle" fill="#b0aea5">lights, tick, cross</text>
+<g transform="translate(508,12)"><rect x="0" y="0" width="60" height="28" rx="6" fill="#fff2a0"/><text x="8" y="17" fill="#141413">Note</text><rect x="70" y="2" width="76" height="26" rx="6" fill="none" stroke="#c00000" stroke-width="2.5" transform="rotate(-6 108 15)"/><text x="108" y="20" text-anchor="middle" font-weight="700" font-size="10" fill="#c00000" transform="rotate(-6 108 15)">DRAFT</text></g>
+<text x="584" y="64" text-anchor="middle" fill="#b0aea5">sticky note, stamp</text>
+</svg></div>
+
+<div class="foot"><span>Lattice guide</span><span>06</span></div>
+</section>
+
+<section class="sheet">
+<div class="hdr"><span class="sec">Compared</span><span class="num">07</span></div>
+<h2>Versus Macabacus and think-cell</h2>
+<p class="lead">Where the three overlap, Lattice is a peer. Where think-cell's chart engine starts, Lattice stops on purpose.</p>
+<table class="cmp"><thead><tr><th>Capability</th><th>Macabacus</th><th>think-cell</th><th class="lat">Lattice</th></tr></thead><tbody><tr><td>Formatting cycles and AutoColor</td><td><i class="pill yes">Yes</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Precedent / dependent jumps, trace window</td><td><i class="pill yes">Yes</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Hard-code and consistency audit</td><td><i class="pill yes">Yes</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Model generators (LBO, DCF, returns, debt, sensitivity)</td><td><i class="pill part">Partial</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Case drop-down and case runner</td><td><i class="pill no">No</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Excel to PowerPoint / Word links with refresh</td><td><i class="pill yes">Yes</i></td><td><i class="pill part">Partial</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Match size / replace in place on export</td><td><i class="pill yes">Yes</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Version-aware refresh (V1 vs V2 open)</td><td><i class="pill part">Partial</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Shape alignment, distribution, Auto Align</td><td><i class="pill yes">Yes</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Agenda / table of contents, pagination</td><td><i class="pill yes">Yes</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Slide library and slide links</td><td><i class="pill yes">Yes</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Styles applied across a deck</td><td><i class="pill yes">Yes</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Harvey balls, stickers, stamps</td><td><i class="pill part">Partial</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Chart totals, CAGR and difference arrows</td><td><i class="pill part">Partial</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Waterfall, football field, stacked with totals</td><td><i class="pill yes">Yes</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>In-slide chart engine with editable datasheet</td><td><i class="pill na">&ndash;</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill no">No</i></td></tr><tr><td>Mekko and Gantt charts</td><td><i class="pill no">No</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill no">No</i></td></tr><tr><td>Automatic label placement on charts</td><td><i class="pill na">&ndash;</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill no">No</i></td></tr><tr><td>Workbook diff (two versions)</td><td><i class="pill yes">Yes</i></td><td><i class="pill na">&ndash;</i></td><td class='lat'><i class="pill part">Partial</i></td></tr><tr><td>Settings dialog</td><td><i class="pill yes">Yes</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill yes">Yes</i></td></tr><tr><td>Mac support</td><td><i class="pill yes">Yes</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill no">No</i></td></tr><tr><td>Licence server, telemetry, subscription</td><td><i class="pill yes">Yes</i></td><td><i class="pill yes">Yes</i></td><td class='lat'><i class="pill no">No</i></td></tr></tbody></table>
+<div class="gap g2">
+<div class="card"><h3>What Lattice deliberately does not do</h3><ul><li>It does not replace PowerPoint's chart engine. Annotations go on native Excel charts and arrive in slides as linked pictures, or as native PowerPoint charts without annotations. think-cell's in-slide charts with automatic label layout, Mekko and Gantt are its real moat and are out of scope.</li><li>No keyboard hook in PowerPoint (VBA cannot do it safely), so PowerPoint shortcuts are keytips.</li><li>No cloud, no collaboration, no Mac.</li></ul></div>
+<div class="card"><h3>What it adds that neither has</h3><ul><li>A case runner that turns the case drop-down into a scenario table in one command.</li><li>A refresh that recognises a V2 of the model and repoints every link once.</li><li>A trace window built for the keyboard: Enter closes it so F2 is the next key.</li><li>Plain text settings and shortcuts you can read, diff and share.</li></ul></div>
+</div>
+<div class="gap tiles"><div class="tile g"><div class="n">16</div><div class="l">capabilities matched or exceeded</div></div><div class="tile b"><div class="n">1</div><div class="l">partial: workbook diff</div></div><div class="tile"><div class="n">5</div><div class="l">left out on purpose</div></div></div>
+
+<div class="gap g3"><div><img class="fig" src="brand/ill_model.png" style="height:24mm;object-fit:cover"><div class="cap"><b>The model.</b> Colour, audit, cases.</div></div><div><img class="fig" src="brand/ill_link.png" style="height:24mm;object-fit:cover"><div class="cap"><b>The link.</b> Export once, refresh always.</div></div><div><img class="fig" src="brand/ill_slide.png" style="height:24mm;object-fit:cover"><div class="cap"><b>The slide.</b> Align, stamp, check.</div></div></div>
+<div class="foot"><span>Lattice guide</span><span>07</span></div>
+</section>
+
+<section class="sheet">
+<div class="hdr"><span class="sec">How it is built</span><span class="num">08</span></div>
+<h2>A build you can read, tests that drive real Office</h2>
+<img class="fig" src="guide_img/fig_ribbon_excel.png"><div class="cap"><b>The Excel tab.</b> Workbook, Color, Model, Audit, Comps, Export, Lattice. Every large button carries one of the 40 generated icons.</div>
+<div class="gap card"><svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" font-family="Poppins, Arial, sans-serif">
+<defs><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b0aea5"/></marker></defs>
+<g font-size="11" font-weight="600" fill="#141413" text-anchor="middle">
+<rect x="4" y="30" width="110" height="64" rx="12" fill="#fff" stroke="#e8e6dc"/><text x="59" y="56">VBA source</text><text x="59" y="74" font-size="9" font-weight="400" fill="#b0aea5">35 modules, 6 forms</text>
+<rect x="136" y="30" width="110" height="64" rx="12" fill="#fff" stroke="#e8e6dc"/><text x="191" y="56">Lints</text><text x="191" y="74" font-size="9" font-weight="400" fill="#b0aea5">the VBA traps</text>
+<rect x="268" y="30" width="110" height="64" rx="12" fill="#141413"/><text x="323" y="56" fill="#faf9f5">VBE compile</text><text x="323" y="74" font-size="9" font-weight="400" fill="#b0aea5">watcher thread</text>
+<rect x="400" y="30" width="110" height="64" rx="12" fill="#fff" stroke="#e8e6dc"/><text x="455" y="56">.xlam .ppam .dotm</text><text x="455" y="74" font-size="9" font-weight="400" fill="#b0aea5">ribbon + icons injected</text>
+<rect x="532" y="30" width="104" height="64" rx="12" fill="#d97757"/><text x="584" y="56" fill="#fff">Install</text><text x="584" y="74" font-size="9" font-weight="400" fill="#fff">per user, no admin</text>
+</g>
+<g stroke="#b0aea5" stroke-width="2" marker-end="url(#b)"><path d="M116,62 L132,62"/><path d="M248,62 L264,62"/><path d="M380,62 L396,62"/><path d="M512,62 L528,62"/></g>
+<rect x="136" y="112" width="374" height="26" rx="13" fill="#788c5d" opacity=".15"/><text x="323" y="129" text-anchor="middle" font-size="10" fill="#141413">25 COM-driven test scripts drive real Excel, PowerPoint and Word against every build</text>
+</svg></div>
+<div class="gap g3">
+<div class="card"><h3>Source</h3><p><b>src\excel</b>, <b>src\ppt</b>, <b>src\word</b> hold the modules and form code; <b>src\shared</b> is compiled into PowerPoint and Word. UserForms are built from code at build time, so the repository holds no binary form files. <b>ribbon\*.xml</b> are the customUI definitions.</p></div>
+<div class="card"><h3>Build</h3><p><b>build\build.ps1</b> drives Office through COM: imports the modules, builds the forms, compiles through the VBE with a watcher thread that reads and dismisses the compile dialog, saves the add-ins and injects the ribbon XML and icons with System.IO.Packaging. Static lints catch reserved identifiers, one-letter procedures, one-line If procedures and declarations after a procedure.</p></div>
+<div class="card"><h3>Tests</h3><p><b>tests\</b> drives real instances with a dialog watcher: command sweeps, semantic checks of the formula tools, the stray-Excel-instance scenario, refresh and version prompts, the Trace window by mouse and keyboard, the case runner, chart annotations, stickers, and UI captures that never steal focus.</p></div>
+</div>
+<div class="gap g2">
+<div class="card"><h3>Install in a minute</h3><ol style="margin:0;padding-left:16px"><li>Close Excel, PowerPoint and Word.</li><li>Run <b>build\install.ps1</b> (or <b>build\build.ps1</b> first to rebuild).</li><li>Open the apps: the Lattice tab is there. Per user, no admin rights: Excel's OPEN key, PowerPoint's own AddIns collection, Word's STARTUP folder.</li></ol></div>
+<div class="card"><h3>Keys and settings are files</h3><p>Excel shortcuts live in <b>%APPDATA%\Lattice\excel_shortcuts.txt</b> and regenerate the PDF manual. Settings are key/value pairs next to it, edited from the Settings dialog. Nothing phones home.</p>
+<p class="gap"><span class="k o">Alt</span><span class="k">K</span> Excel &nbsp; <span class="k o">Alt</span><span class="k">L</span> PowerPoint, Word. Office keeps T, E, I, O, V and D for its 2003 menus, which is why the tab is not Alt+T.</p></div>
+</div>
+<div class="gap g3">
+<div class="card"><h4>Next</h4><p>Workbook diff as a styled report, an Explorer pane for Word, and a native-chart route for Mekko and Gantt only if it can be done honestly.</p></div>
+<div class="card"><h4>Repository</h4><p>On GitHub at github.com/AshWatter/Lattice. Source, build, tests, figures, this guide and the shortcut manual travel together, and all of them regenerate from scripts.</p></div>
+<div class="card"><h4>Credits</h4><p>Specified and driven by Chiltern Capital Management; written with Claude; verified by Excel, PowerPoint and Word themselves.</p></div></div>
+
+<div class="gap tiles"><div class="tile o"><div class="n">160</div><div class="l">Excel commands</div></div><div class="tile b"><div class="n">227</div><div class="l">PowerPoint commands</div></div><div class="tile g"><div class="n">40</div><div class="l">generated icons, one script</div></div></div>
+<div class="gap card"><h4>Four lints that each saved a build</h4><p><b>Reserved identifiers</b>: VBA is case-insensitive, so a variable called <i>nExt</i> or <i>lib</i> is a keyword. <b>One-letter procedures</b> collide with loop variables. <b>One-line If procedures</b> swallow their End Sub. <b>Declarations after a procedure</b> compile into "Variable not defined" three screens away from the cause. All four are caught by a regex before Office is even started.</p></div>
+
+<div class="foot"><span>Lattice is not affiliated with Macabacus or think-cell, trademarks of their owners. Licence to be decided before publication; MIT suggested.</span><span>08</span></div>
+</section>
+</body></html>
